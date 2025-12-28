@@ -59,8 +59,8 @@ Vec2 Isometric_Screen_World_Pos(Vec2 p){
 TransformedView tv;
 
 void Setup(AlxWindow* w){
-	tv = TransformedView_New((Vec2){ GetWidth() * 0.15f,GetHeight() * 0.15f });
-	tv.Offset = (Vec2){ 0.0f,0.0f };
+	tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
+	TransformedView_Zoom(&tv,(Vec2){ 0.04f,0.04f });
 
 	memset(world,0,sizeof(Block) * WORLDSIZE_X * WORLDSIZE_Y);
 
